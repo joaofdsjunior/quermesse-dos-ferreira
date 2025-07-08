@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quermesse dos Ferreira: o arraial moderno da gota serena - uma celebração única!</title>
-    <meta name="description" content="Descubra a Quermesse dos Ferreira com um toque moderno da gota serena! Comidas típicas, música, fogueira e a magia do sertão em um evento inesquecível. Domingo, 27 de Julho, 14h.">
-    <meta name="keywords" content="quermesse, festa junina, cordel moderno, sertão, Auto da Compadecida, Ferreira, família, evento, Diadema, Canhema, xilogravura, cultura nordestina, boto cor de rosa, sanfoneiro, cangaceiro, festa temática">
+    <title>Quermesse dos Ferreira: o arraial da gota serena - uma celebração única!</title>
+    <meta name="description" content="Descubra a Quermesse dos Ferreira com um toque da gota serena! Comidas típicas, música, fogueira e a magia do sertão em um evento inesquecível. Domingo, 27 de Julho, 14h.">
+    <meta name="keywords" content="quermesse, festa junina, cordel, sertão, Auto da Compadecida, Ferreira, família, evento, Diadema, Canhema, xilogravura, cultura nordestina, boto cor de rosa, sanfoneiro, cangaceiro, festa temática">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -68,7 +68,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 350px;
+            min-height: 450px; /* Increased height for Falas dos Ferreira */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,6 +84,19 @@
             display: flex;
             flex-direction: column; /* Added for content distribution */
             justify-content: space-between; /* Added for content distribution */
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        /* Specific overlay for cordel section to center content */
+        .cordel-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for cordel text */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
             align-items: center;
             padding: 1.5rem;
             text-align: center;
@@ -153,18 +166,104 @@
             display: block;
             margin-top: 0.25rem;
         }
+
+        /* Navigation Menu Styles */
+        .navbar {
+            background-color: #a16207; /* Deep Ochre for navbar */
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 50; /* Ensure it stays on top */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .navbar a {
+            color: white;
+            padding: 0.75rem 1.25rem;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            border-radius: 0.25rem;
+        }
+        .navbar a:hover {
+            background-color: #84540a; /* Darker Ochre on hover */
+        }
+        /* Mobile menu stacking */
+        @media (max-width: 767px) { /* Tailwind's 'md' breakpoint is 768px */
+            .navbar-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Dica Extra style */
+        .dica-extra {
+            background-color: #e0f2f7; /* Light blue for a friendly tip */
+            color: #007bff; /* Darker blue for text */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #0056b3; /* Dark blue border */
+            margin-top: 1.5rem; /* Space from previous content */
+            font-style: italic;
+        }
+        .quote-footer {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: auto; /* Pushes to the bottom */
+            width: 100%;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Cordel text styling */
+        .cordel-text {
+            color: #f8f5ed; /* Light text for readability */
+            font-size: 0.75rem; /* text-xs, adjusted for fitting */
+            line-height: 1.3; /* Slightly tighter line height */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            column-count: 2; /* Attempting 2 columns for desktop */
+            column-gap: 1.5rem; /* Gap between columns */
+            text-align: justify; /* Justify text for a more traditional cordel look */
+        }
+        .cordel-text p {
+            margin-bottom: 0.4rem; /* Smaller space between stanzas */
+            break-inside: avoid-column; /* Prevent stanzas from breaking across columns */
+        }
+
+        @media (max-width: 767px) {
+            .cordel-text {
+                column-count: 1; /* Single column on mobile */
+                font-size: 0.75rem; /* Keep text-xs on mobile */
+            }
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen">
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-center py-2">
+            <div class="navbar-links flex flex-col md:flex-row md:space-x-4">
+                <a href="#top">O Arraial</a>
+                <a href="#detalhes">Quando e Onde?</a>
+                <a href="#contribuicao">Como funcionará?</a>
+                <a href="#confirmados">Quem vai?</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section - Main Wallpaper Image -->
-    <section class="hero-section w-full" style="background-image: url('https://placehold.co/1920x1080/333333/f8f5ed?text=Sua%20Xilogravura%20Principal%20do%20Sertão%20Aqui');">
+    <section id="top" class="hero-section w-full" style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/70/80/88/1000_F_270808850_7RSkMJxQvbB6i44LCV9AvhIOoC1AF2Noz.jpg');">
         <div class="hero-overlay">
             <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in-slide-up" style="animation-delay: 0.1s;">
                 Quermesse dos Ferreira
             </h1>
-            <p class="text-2xl md:text-4xl font-semibold italic mb-8 animate-fade-in-slide-up" style="animation-delay: 0.3s;">
-                O arraial moderno da gota serena: uma celebração única!
+            <p class="text-2xl md:text-4xl font-semibold italic mb-2 animate-fade-in-slide-up" style="animation-delay: 0.3s;">
+                O arraial da gota serena: uma celebração única!
+            </p>
+            <p class="text-sm text-white mb-8 animate-fade-in-slide-up" style="animation-delay: 0.4s;">
+                (ideia lançada no batizado do Ícaro)
             </p>
             <a href="https://wa.me/5511958193150" target="_blank" class="btn-primary animate-fade-in-slide-up" style="animation-delay: 0.5s;">
                 Confirme sua presença no WhatsApp!
@@ -194,38 +293,33 @@
         </section>
 
         <!-- Call to Action Section -->
-        <section class="mb-10 text-center animate-fade-in-slide-up" style="animation-delay: 0.9s;">
+        <section id="contribuicao" class="mb-10 text-center animate-fade-in-slide-up" style="animation-delay: 0.9s;">
             <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-6">Sua contribuição faz o arraial!</h2>
             <p class="text-xl md:text-2xl text-gray-800 mb-6">
-                <span class="font-extrabold text-amber-800 text-3xl md:text-4xl block mb-2">
-                    Cada um traz e confirma uma comida típica deliciosa!
-                </span>
-                Para que nossa festa seja um sucesso arretado,
+                Cada um traz uma comida típica deliciosa!
             </p>
-            <p class="text-lg md:text-xl text-gray-700 mb-8">
+            <p class="text-lg md:text-xl text-gray-700 mb-4">
                 Confirme sua presença e o que vai trazer com:
                 <span class="block mt-4 text-3xl font-bold text-green-700 mb-4">
                     📞 Flávia, Francis ou Júnior
                 </span>
-                <a href="https://wa.me/5511958193150" target="_blank" class="btn-whatsapp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp"><path d="M16.7 8A3 3 0 0 0 14 6.3V2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2v4L17 18h3a2 2 0 0 0 2-2V9.8c-.9.8-2.1 1.2-3.3 1.2z"/></svg>
-                    Fale conosco no WhatsApp!
-                </a>
             </p>
-            <div class="bg-purple-50 p-6 rounded-lg shadow-md border-l-4 border-purple-600 inline-block max-w-md mt-6">
-                <p class="text-md md:text-lg text-purple-800 font-semibold">
-                    Quer trazer amigos para a folia? Eles são muito bem-vindos! Só pedimos a gentileza de informar os nomes e o que cada um vai trazer para a gente organizar tudo direitinho! ❤️
-                </p>
-                <p class="text-md md:text-lg text-purple-800 font-semibold mt-2">
-                    Afinal, quanto mais gente, mais alegria e mais comida boa pra gente prosear!
+            <a href="https://wa.me/5511958193150" target="_blank" class="btn-whatsapp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp"><path d="M16.7 8A3 3 0 0 0 14 6.3V2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2v4L17 18h3a2 2 0 0 0 2-2V9.8c-.9.8-2.1 1.2-3.3 1.2z"/></svg>
+                Fale conosco no WhatsApp!
+            </a>
+
+            <div class="dica-extra max-w-md mx-auto mt-6">
+                <p class="text-md md:text-lg font-semibold">
+                    ✨ Dica Extra: Quer trazer mais gente para a folia? Eles são muito bem-vindos! Só pedimos a gentileza de informar os nomes e o que cada um vai trazer para a gente organizar tudo direitinho! ❤️
                 </p>
             </div>
         </section>
 
-        <!-- Wallpaper Section 2: Cangaceiros e Fogueira (Placeholder) -->
-        <section class="image-wallpaper-section w-full rounded-xl mb-10" style="background-image: url('https://placehold.co/1200x600/333333/f8f5ed');">
-            <div class="image-overlay rounded-xl pt-4 pb-4 md:pt-6 md:pb-6"> <!-- Adjusted padding for content -->
-                <div class="w-full px-4 md:px-6 mt-auto"> <!-- Padding for the quotes container, mt-auto to push to bottom -->
+        <!-- Wallpaper Section 2: Cangaceiros e Fogueira (Image and Quotes) -->
+        <section class="image-wallpaper-section w-full rounded-xl mb-10" style="background-image: url('https://as1.ftcdn.net/v2/jpg/12/74/51/20/1000_F_1274512060_QL25lB00uLXFm63PK6m5vgcRiZIDCBYq.jpg');">
+            <div class="image-overlay rounded-xl pt-4 pb-4 md:pt-6 md:pb-6">
+                <div class="w-full px-4 md:px-6 mt-auto">
                     <h4 class="text-2xl md:text-3xl font-bold mb-4 text-center text-amber-300">Falas dos Ferreira que fazem a alegria da família:</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="quote-block">
@@ -248,13 +342,17 @@
                             <p class="italic text-lg">"Homi"</p>
                             <span class="author">- Qualquer Ferreira quando tá "indignado"</span>
                         </div>
+                        <div class="quote-block">
+                            <p class="italic text-lg">"Tá me chamando de..."</p>
+                            <span class="author">- Anônimo</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Confirmation Status Section (Simulated) -->
-        <section class="mb-8 p-6 rounded-xl bg-blue-50 shadow-lg animate-fade-in-slide-up" style="animation-delay: 1.1s;">
+        <section id="confirmados" class="mb-8 p-6 rounded-xl bg-blue-50 shadow-lg animate-fade-in-slide-up" style="animation-delay: 1.1s;">
             <h2 class="text-4xl md:text-5xl font-bold text-blue-800 text-center mb-6">
                 Quem já confirmou?
             </h2>
@@ -266,34 +364,40 @@
                 </h3>
                 <ul class="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Madrinha e Padrinho (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Madrinha e Padrinho (a definir)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Kelli e Francis (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Kelli e Francis (caldo verde e a definir)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Flávia e Alessandro (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Flávia e Alessandro (canjica e queijo coalho p/ baião)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Júnior, Carol e Heitor (item: quentão e paçoca)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Júnior, Carol e Heitor (quentão, paçoca e vinho quente)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Vó, Luciene, Duda (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Vó, Luciene e Duda (brownie)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Jayane (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Jayane (a definir)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Emerson (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Emerson (a definir)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Anderson e Simone (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Anderson e Simone (a definir)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Lucas e Talita (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Lucas e Talita (a definir)
                     </li>
                     <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
-                        <span class="mr-3 text-green-600 text-xl">✔️</span> Antonio e Sivalda (item: lorem ipsum)
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Antonio e Sivalda (a definir)
+                    </li>
+                    <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Creonice (arroz doce)
+                    </li>
+                    <li class="bg-green-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-green-500">
+                        <span class="mr-3 text-green-600 text-xl">✔️</span> Maria (baião de dois e cachorro quente)
                     </li>
                 </ul>
             </div>
@@ -305,7 +409,7 @@
                 </h3>
                 <ul class="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <li class="bg-red-100 p-4 rounded-lg shadow-sm flex items-center border-l-4 border-red-500">
-                        <span class="mr-3 text-red-600 text-xl">❓</span> Samara e Samuel (item: lorem ipsum)
+                        <span class="mr-3 text-red-600 text-xl">❓</span> Samara e Samuel (a definir)
                     </li>
                 </ul>
                 <p class="text-center text-gray-600 text-sm mt-6 italic">
@@ -314,11 +418,63 @@
             </div>
         </section>
 
-        <!-- Wallpaper Section 3: Nordestinos e Alegria (Placeholder) -->
-        <section class="image-wallpaper-section w-full rounded-xl mb-8" style="background-image: url('https://placehold.co/1200x600/333333/f8f5ed');">
+        <!-- New Cordel Section (Moved to be the last content section) -->
+        <section class="image-wallpaper-section w-full rounded-xl mb-10" style="background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/939aa9178413959.64e7751227e04.png');">
+            <div class="cordel-overlay rounded-xl">
+                <div class="w-full max-w-2xl px-4 md:px-6 py-4 bg-black bg-opacity-70 rounded-lg">
+                    <h4 class="text-2xl md:text-3xl font-bold mb-2 text-center text-amber-300">O Cordel de Maria</h4>
+                    <p class="text-xs text-white mb-4">(contado por tio João ao Francis, Flávia e Jr. quando tinham 6,7 e 8 anos.)</p>
+                    <div class="cordel-text text-left">
+                        <p>No meio da floresta,</p>
+                        <p>Havia um casebre,</p>
+                        <p>Onde morava Maria,</p>
+                        <p>Moça de bela febre.</p>
+                        <p>Esperando o seu amado,</p>
+                        <p>Que partiu sem dar um "até breve".</p>
+                        <br>
+                        <p>Tudo era muito longe,</p>
+                        <p>Sem notícia, sem parente,</p>
+                        <p>A única companhia,</p>
+                        <p>Um cãozinho eloquente.</p>
+                        <p>Que de tanto conviver,</p>
+                        <p>Falava na mente da gente.</p>
+                        <br>
+                        <p>Às vezes, na calada,</p>
+                        <p>Uma visita assustadora,</p>
+                        <p>Com voz trêmula batia,</p>
+                        <p>E a pergunta vinha, a toda hora:</p>
+                        <p>"Maria? Abre a porta, Maria!"</p>
+                        <p>Um medo que apavora.</p>
+                        <br>
+                        <p>E o cão fiel, ligeiro,</p>
+                        <p>Antes que Maria acordasse,</p>
+                        <p>Anunciava, certeiro:</p>
+                        <p>"Maria lavou pé,</p>
+                        <p>Maria lavou mão,</p>
+                        <p>E já foi se deitar."</p>
+                        <br>
+                        <p>Depois de muitas noites,</p>
+                        <p>Maria enfim notou,</p>
+                        <p>Que alguém batia à sua porta,</p>
+                        <p>Mas nunca adentrou.</p>
+                        <p>Irritada com o amigo,</p>
+                        <p>A questionar ela começou.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wallpaper Section 3: Nordestinos e Alegria (Image and Quote) -->
+        <section class="image-wallpaper-section w-full rounded-xl mb-8" style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/70/80/90/1000_F_270809095_TvOnNUucgMHoPxoowqlpt4PUpeBsbM6v.jpg');">
             <div class="image-overlay rounded-xl">
-                <p class="text-white text-2xl md:text-3xl font-bold drop-shadow-lg">
-                    A alegria do sertão em cada sorriso e em cada passo de forró!
+                <!-- Removed direct quote text from here -->
+            </div>
+            <div class="quote-footer">
+                <p class="text-white text-lg md:text-xl font-bold drop-shadow-lg">
+                    "Abençoa, Senhor, as famílias! Amém! Abençoa, Senhor, a minha também."
+                </p>
+                <p class="text-white text-md md:text-lg font-semibold italic mt-1">
+                    - Padre Zezinho
                 </p>
             </div>
         </section>
@@ -334,6 +490,3 @@
 
 </body>
 </html>
-
-
-
