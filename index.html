@@ -181,9 +181,39 @@
             z-index: 50; /* Ensure it stays on top */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .navbar-container {
+            max-width: 4xl;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .navbar-toggle {
+            display: block; /* Show hamburger on mobile */
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .navbar-links {
+            display: none; /* Hidden by default on mobile */
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        .navbar-links.active {
+            display: flex; /* Show when active */
+        }
         .navbar a {
             color: white;
-            padding: 0.75rem 1.25rem;
+            padding: 0.5rem 1rem; /* Smaller padding for mobile menu items */
+            font-size: 0.875rem; /* text-sm for mobile menu */
             display: block;
             text-align: center;
             transition: background-color 0.3s ease;
@@ -192,15 +222,24 @@
         .navbar a:hover {
             background-color: #84540a; /* Darker Ochre on hover */
         }
-        /* Mobile menu stacking */
-        @media (max-width: 767px) { /* Tailwind's 'md' breakpoint is 768px */
+
+        @media (min-width: 768px) { /* md breakpoint */
+            .navbar-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .navbar-toggle {
+                display: none; /* Hide hamburger on desktop */
+            }
             .navbar-links {
-                flex-direction: column;
-                align-items: center;
+                display: flex; /* Always show on desktop */
+                flex-direction: row;
+                width: auto;
+                space-x: 1rem; /* Tailwind's md:space-x-4 */
             }
             .navbar a {
-                padding: 0.5rem 1rem; /* Smaller padding for mobile menu items */
-                font-size: 0.875rem; /* text-sm for mobile menu */
+                padding: 0.75rem 1.25rem; /* Original padding for desktop */
+                font-size: 1rem; /* Original font size for desktop */
             }
         }
 
@@ -228,7 +267,7 @@
         /* Cordel text styling */
         .cordel-text {
             color: #f8f5ed; /* Light text for readability */
-            font-size: 0.625rem; /* text-xs, adjusted to 10px for even smaller screens */
+            font-size: 0.625rem; /* 10px on mobile */
             line-height: 1.3; /* Slightly tighter line height */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
             column-count: 1; /* Single column on mobile by default */
@@ -243,7 +282,16 @@
         @media (min-width: 768px) { /* md breakpoint */
             .cordel-text {
                 column-count: 2; /* Two columns on desktop */
-                font-size: 0.75rem; /* text-xs on desktop */
+                font-size: 0.75rem; /* 12px on desktop */
+            }
+        }
+        /* Adjust font size for quote blocks on mobile */
+        @media (max-width: 767px) {
+            .quote-block p {
+                font-size: 0.875rem; /* text-sm */
+            }
+            .quote-block .author {
+                font-size: 0.75rem; /* text-xs */
             }
         }
     </style>
@@ -252,8 +300,11 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-center py-2">
-            <div class="navbar-links flex flex-col md:flex-row md:space-x-4">
+        <div class="navbar-container">
+            <button class="navbar-toggle" id="navbarToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+            <div class="navbar-links" id="navbarLinks">
                 <a href="#top">O Arraial</a>
                 <a href="#detalhes">Quando e Onde?</a>
                 <a href="#contribuicao">Como funcionará?</a>
@@ -497,5 +548,27 @@
 
     </div>
 
+    <script>
+        // JavaScript for mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarLinks = document.getElementById('navbarLinks');
+
+            if (navbarToggle && navbarLinks) {
+                navbarToggle.addEventListener('click', function() {
+                    navbarLinks.classList.toggle('active');
+                });
+
+                // Close menu when a link is clicked (for smooth navigation)
+                navbarLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (navbarLinks.classList.contains('active')) {
+                            navbarLinks.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
