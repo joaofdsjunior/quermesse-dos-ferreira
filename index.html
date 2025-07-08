@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quermesse dos Ferreira - Não Perca!</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and general body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fce7f3; /* Light pink background */
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f472b6; /* Pink-500 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ec4899; /* Pink-600 */
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 max-w-4xl w-full my-8 border-4 border-pink-400">
+
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-pink-600 mb-4 animate-bounce-slow">
+                🎉 Quermesse dos Ferreira 🎉
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 font-semibold italic">
+                Prepare-se para a festa mais gostosa do ano!
+            </p>
+        </header>
+
+        <!-- Event Details Section -->
+        <section class="mb-8 text-center bg-pink-100 p-6 rounded-2xl shadow-inner">
+            <h2 class="text-3xl md:text-4xl font-bold text-pink-700 mb-4">Quando e Onde?</h2>
+            <p class="text-lg md:text-xl text-gray-800 mb-2">
+                🗓️ <span class="font-bold">Domingo, 27 de Julho</span>, a partir das <span class="font-bold">14h</span>
+            </p>
+            <p class="text-lg md:text-xl text-gray-800">
+                📍 No aconchegante <span class="font-bold">Quintal do Antônio & Sivalda</span>
+            </p>
+            <p class="text-md md:text-lg text-gray-600 mt-1">
+                Rua Santa Clara, 310, Canhema
+            </p>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="mb-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-pink-700 mb-4">Sua Participação é Essencial!</h2>
+            <p class="text-lg md:text-xl text-gray-800 mb-4">
+                Para nossa quermesse ser um sucesso, <span class="font-bold text-pink-600">cada um traz e confirma uma comida típica!</span> 😋
+            </p>
+            <p class="text-lg md:text-xl text-gray-800 mb-6">
+                Confirme sua presença e o que vai trazer com:
+                <span class="block mt-2 text-2xl font-bold text-purple-700">
+                    📞 Flávia, Francis ou Júnior
+                </span>
+            </p>
+            <div class="bg-purple-100 p-4 rounded-xl shadow-md inline-block">
+                <p class="text-md md:text-lg text-purple-800 font-semibold">
+                    🗣️ Quer trazer amigos? Avise-nos com antecedência! Eles são super bem-vindos, seguindo as mesmas regrinhas de contribuição.
+                </p>
+            </div>
+        </section>
+
+        <!-- Confirmation Status Section (Simulated) -->
+        <section class="mb-8 p-6 rounded-2xl bg-gradient-to-r from-pink-50 to-purple-50 shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold text-pink-700 text-center mb-6">
+                Quem Já Confirmou e Quem Ainda Não?
+            </h2>
+
+            <!-- Confirmed Guests -->
+            <div class="mb-6">
+                <h3 class="text-2xl md:text-3xl font-semibold text-green-700 mb-3 flex items-center justify-center">
+                    ✅ Confirmados (Comida Típica Garantida!)
+                </h3>
+                <ul class="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center">
+                        <span class="mr-2 text-green-600">✨</span> Família Silva (Bolo de Fubá)
+                    </li>
+                    <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center">
+                        <span class="mr-2 text-green-600">✨</span> Tia Lúcia (Canjica Cremosa)
+                    </li>
+                    <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center">
+                        <span class="mr-2 text-green-600">✨</span> Primo João (Pipoca Doce)
+                    </li>
+                    <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center">
+                        <span class="mr-2 text-green-600">✨</span> Vovó Ana (Cachorro Quente Caseiro)
+                    </li>
+                    <!-- Add more confirmed guests here for demonstration -->
+                </ul>
+            </div>
+
+            <!-- Awaiting Confirmation Guests -->
+            <div>
+                <h3 class="text-2xl md:text-3xl font-semibold text-red-700 mb-3 flex items-center justify-center">
+                    ⏳ Aguardando Confirmação (Corre pra Falar com a Gente!)
+                </h3>
+                <ul class="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <li class="bg-red-100 p-3 rounded-lg shadow-sm flex items-center">
+                        <span class="mr-2 text-red-600">❓</span> Família Oliveira
+                    </li>
+                    <li class="bg-red-100 p-3 rounded-lg shadow-sm flex items-center">
+                        <span class="mr-2 text-red-600">❓</span> Tio Carlos
+                    </li>
+                    <li class="bg-red-100 p-3 rounded-lg shadow-sm flex items-center">
+                        <span class="mr-2 text-red-600">❓</span> Amiga da Flávia, Patrícia
+                    </li>
+                    <!-- Add more pending guests here for demonstration -->
+                </ul>
+                <p class="text-center text-gray-600 text-sm mt-4 italic">
+                    (Esta lista é apenas uma simulação. Para confirmar, entre em contato com os organizadores!)
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center text-gray-600 text-sm mt-8">
+            <p>Mal podemos esperar para celebrar com vocês! ✨</p>
+            <p>&copy; 2025 Família Ferreira. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
