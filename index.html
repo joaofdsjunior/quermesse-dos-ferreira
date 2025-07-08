@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quermesse dos Ferreira: O Arraial do Cordel - Não Perca!</title>
+    <title>Quermesse dos Ferreira: O Arraial do Cordel - Uma Prosa de Festa!</title>
     <meta name="description" content="Prepare-se para a Quermesse dos Ferreira com tema de cordel! Comidas típicas, sanfoneiro, fogueira e a alegria do sertão. Domingo, 27 de Julho, 14h.">
-    <meta name="keywords" content="quermesse, festa junina, cordel, sertão, Auto da Compadecida, Ferreira, família, evento, São Caetano do Sul, Canhema">
+    <meta name="keywords" content="quermesse, festa junina, cordel, sertão, Auto da Compadecida, Ferreira, família, evento, São Caetano do Sul, Canhema, xilogravura, cultura nordestina">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for Inter font and general body */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fefce8; /* Warm, light yellow for sertão sand */
-            color: #262626; /* Dark gray for strong contrast */
+            background-color: #fdf8e6; /* Very light, warm yellow for aged paper feel */
+            color: #333333; /* Dark gray for strong contrast, like ink */
             line-height: 1.6;
-            /* Subtle cordel-inspired background pattern (stylized woodcut) */
-            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fef3c7' fill-opacity='0.6' fill-rule='evenodd'%3E%3Cpath d='M0 0h5v5H0V0zm5 5h5v5H5V5z'/%3E%3C/g%3E%3C/svg%3E");
+            /* Cordel-inspired background pattern (simple SVG mimicking woodcut texture) */
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e0d8c0' stroke-width='1.5'%3E%3Cpath d='M-1 1l12 12M-1 6l12 12M-1 -4l12 12'/%3E%3C/g%3E%3C/svg%3E");
             background-repeat: repeat;
+            background-size: 10px 10px; /* Adjust size of the pattern */
         }
 
         /* Custom scrollbar for better aesthetics */
@@ -29,14 +30,14 @@
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #a16207; /* Amber-700 for rustic feel */
+            background: #8B4513; /* SaddleBrown - earthy brown */
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #84540a; /* Darker Amber */
+            background: #6F350F; /* Darker brown */
         }
 
-        /* Keyframe for a more festive bounce */
+        /* Keyframe for a more festive swing, like a banner */
         @keyframes cordelSwing {
             0%, 100% {
                 transform: rotate(0deg);
@@ -53,10 +54,12 @@
             transform-origin: center top; /* Pivot from the top */
         }
 
-        /* Cordel-style border effect (simple for modern compatibility) */
+        /* Cordel-style border effect with multiple shadows for depth */
         .cordel-border {
-            border: 3px solid #7c2d12; /* Terra Cotta / Dark Orange */
-            box-shadow: 5px 5px 0px 0px #f59e0b; /* Orange-500 for depth */
+            border: 3px solid #7c2d12; /* Darker red-brown for main border */
+            box-shadow:
+                6px 6px 0px 0px #f59e0b, /* Orange-500 for first layer of depth */
+                12px 12px 0px 0px #d97706; /* Orange-600 for deeper depth */
         }
     </style>
 </head>
@@ -67,18 +70,18 @@
 
         <!-- Header Section -->
         <header class="text-center mb-8">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-amber-700 mb-4 animate-cordel-swing">
-                🔥 Quermesse dos Ferreira 🔥
+            <h1 class="text-5xl md:text-6xl font-extrabold text-amber-800 mb-4 animate-cordel-swing">
+                📖 Quermesse dos Ferreira 🤠
             </h1>
             <p class="text-xl md:text-2xl text-blue-800 font-semibold italic">
-                O Arraial do Cordel Chegou! Uma Festa com Sabor de Sertão!
+                O Arraial do Cordel Chegou! Uma Prosa de Festa no Sertão!
             </p>
             <div class="flex justify-center items-center mt-4 space-x-4 text-4xl md:text-5xl">
-                <span>🤠</span> <!-- Cangaceiro -->
-                <span>🎶</span> <!-- Sanfoneiro -->
-                <span>🔥</span> <!-- Fogueira -->
-                <span>👨‍🌾</span> <!-- Nordestino -->
-                <span>🐬</span> <!-- Boto Cor de Rosa (emoji de golfinho, o mais próximo) -->
+                <span title="Cangaceiro">🤠</span>
+                <span title="Sanfoneiro">🎶</span>
+                <span title="Fogueira">🔥</span>
+                <span title="Nordestino">👨‍🌾</span>
+                <span title="Boto Cor de Rosa">🐬</span> <!-- Emoji de golfinho para representar o boto -->
             </div>
         </header>
 
@@ -92,7 +95,7 @@
                 📍 No aconchegante <span class="font-bold text-amber-800">Quintal do Antônio & Sivalda</span>
             </p>
             <p class="text-md md:text-lg text-gray-700 mt-1">
-                Rua Santa Clara, 310, Canhema - Venha pra Folia!
+                Rua Santa Clara, 310, Canhema - Prepare o passo e venha pra Folia!
             </p>
         </section>
 
