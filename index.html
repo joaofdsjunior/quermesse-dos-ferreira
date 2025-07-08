@@ -68,7 +68,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 384px; /* min-h-96 for mobile */
+            min-height: 480px; /* Increased min-h for mobile to accommodate text */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,7 +78,7 @@
         }
         @media (min-width: 768px) { /* md breakpoint */
             .image-wallpaper-section {
-                min-height: 450px; /* Original height for desktop */
+                min-height: 450px; /* Original height for desktop, or adjust if needed */
             }
         }
 
@@ -288,10 +288,13 @@
         /* Adjust font size for quote blocks on mobile */
         @media (max-width: 767px) {
             .quote-block p {
-                font-size: 0.875rem; /* text-sm */
+                font-size: 0.75rem; /* text-xs for smaller quotes on mobile */
             }
             .quote-block .author {
-                font-size: 0.75rem; /* text-xs */
+                font-size: 0.625rem; /* text-xxs for author on mobile */
+            }
+            .grid.grid-cols-1.md\:grid-cols-2 {
+                grid-template-columns: 1fr; /* Force single column for quotes on mobile */
             }
         }
     </style>
