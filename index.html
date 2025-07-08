@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quermesse dos Ferreira: O Arraial do Cordel - Uma Prosa de Festa!</title>
     <meta name="description" content="Prepare-se para a Quermesse dos Ferreira com tema de cordel! Comidas típicas, sanfoneiro, fogueira e a alegria do sertão. Domingo, 27 de Julho, 14h.">
-    <meta name="keywords" content="quermesse, festa junina, cordel, sertão, Auto da Compadecida, Ferreira, família, evento, São Caetano do Sul, Canhema, xilogravura, cultura nordestina">
+    <meta name="keywords" content="quermesse, festa junina, cordel, sertão, Auto da Compadecida, Ferreira, família, evento, São Caetano do Sul, Canhema, xilogravura, cultura nordestina, boto cor de rosa, sanfoneiro, cangaceiro">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -15,8 +15,8 @@
             background-color: #fdf8e6; /* Very light, warm yellow for aged paper feel */
             color: #333333; /* Dark gray for strong contrast, like ink */
             line-height: 1.6;
-            /* Cordel-inspired background pattern (simple SVG mimicking woodcut texture) */
-            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e0d8c0' stroke-width='1.5'%3E%3Cpath d='M-1 1l12 12M-1 6l12 12M-1 -4l12 12'/%3E%3C/g%3E%3C/svg%3E");
+            /* Cordel-inspired background pattern (subtle SVG mimicking woodcut texture) */
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath stroke='%23e0d8c0' stroke-width='0.5' d='M0 0h10v10H0zM10 10h10v10H10z'/%3E%3Cpath stroke='%23e0d8c0' stroke-width='0.2' d='M0 5h10M5 0v10'/%3E%3C/g%3E%3C/svg%3E");
             background-repeat: repeat;
             background-size: 10px 10px; /* Adjust size of the pattern */
         }
@@ -37,53 +37,78 @@
             background: #6F350F; /* Darker brown */
         }
 
-        /* Keyframe for a more festive swing, like a banner */
+        /* Keyframe for a subtle, elegant swing, like a banner in the wind */
         @keyframes cordelSwing {
             0%, 100% {
                 transform: rotate(0deg);
             }
             25% {
-                transform: rotate(-3deg);
+                transform: rotate(-1deg);
             }
             75% {
-                transform: rotate(3deg);
+                transform: rotate(1deg);
             }
         }
         .animate-cordel-swing {
-            animation: cordelSwing 2s infinite ease-in-out;
+            animation: cordelSwing 3s infinite ease-in-out;
             transform-origin: center top; /* Pivot from the top */
         }
 
-        /* Cordel-style border effect with multiple shadows for depth */
+        /* Cordel-style border effect with multiple shadows for depth, mimicking woodcut layers */
         .cordel-border {
             border: 3px solid #7c2d12; /* Darker red-brown for main border */
             box-shadow:
-                6px 6px 0px 0px #f59e0b, /* Orange-500 for first layer of depth */
-                12px 12px 0px 0px #d97706; /* Orange-600 for deeper depth */
+                8px 8px 0px 0px #f59e0b, /* Orange-500 for first layer of depth */
+                16px 16px 0px 0px #d97706; /* Orange-600 for deeper depth */
+        }
+
+        /* Styling for the wallpaper sections */
+        .wallpaper-section {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 300px; /* Minimum height for the wallpaper */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative; /* For overlay */
+        }
+
+        .wallpaper-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
         }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen p-4">
 
-    <!-- Main Container -->
-    <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 max-w-4xl w-full my-8 cordel-border">
+    <!-- Main Container - The "Cordel Book" -->
+    <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 max-w-4xl w-full my-8 cordel-border relative z-10">
 
         <!-- Header Section -->
         <header class="text-center mb-8">
             <h1 class="text-5xl md:text-6xl font-extrabold text-amber-800 mb-4 animate-cordel-swing">
-                📖 Quermesse dos Ferreira 🤠
+                Quermesse dos Ferreira
             </h1>
             <p class="text-xl md:text-2xl text-blue-800 font-semibold italic">
                 O Arraial do Cordel Chegou! Uma Prosa de Festa no Sertão!
             </p>
-            <div class="flex justify-center items-center mt-4 space-x-4 text-4xl md:text-5xl">
-                <span title="Cangaceiro">🤠</span>
-                <span title="Sanfoneiro">🎶</span>
-                <span title="Fogueira">🔥</span>
-                <span title="Nordestino">👨‍🌾</span>
-                <span title="Boto Cor de Rosa">🐬</span> <!-- Emoji de golfinho para representar o boto -->
-            </div>
         </header>
+
+        <!-- Wallpaper Section 1: Sanfoneiro e Boto (Placeholder) -->
+        <section class="wallpaper-section rounded-2xl mb-8 cordel-border" style="background-image: url('https://placehold.co/1200x600/4a2c00/fdf8e6?text=Sua%20Xilogravura%20do%20Sanfoneiro%20e%20Boto%20Aqui');">
+            <div class="wallpaper-overlay rounded-2xl">
+                <p class="text-white text-2xl md:text-3xl font-bold drop-shadow-lg">
+                    A melodia do sanfoneiro e a magia do boto cor-de-rosa esperam por você!
+                </p>
+            </div>
+        </section>
 
         <!-- Event Details Section -->
         <section class="mb-8 text-center bg-amber-50 p-6 rounded-2xl shadow-inner cordel-border">
@@ -103,7 +128,7 @@
         <section class="mb-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-red-700 mb-4">Traga seu Quitute e sua Alegria!</h2>
             <p class="text-lg md:text-xl text-gray-800 mb-4">
-                Para nossa quermesse ser um sucesso arretado, <span class="font-bold text-blue-800">cada um traz e confirma uma comida típica do nosso sertão!</span> 😋
+                Para nossa quermesse ser um sucesso arretado, <span class="font-bold text-blue-800">cada um traz e confirma uma comida típica do nosso sertão!</span>
             </p>
             <p class="text-lg md:text-xl text-gray-800 mb-6">
                 Confirme sua presença e o que vai trazer com:
@@ -113,7 +138,16 @@
             </p>
             <div class="bg-green-50 p-4 rounded-xl shadow-md inline-block cordel-border">
                 <p class="text-md md:text-lg text-green-800 font-semibold">
-                    🗣️ Quer trazer mais gente pra dançar um forró? Avise-nos com antecedência! Amigos são bem-vindos, mas as regras da contribuição valem pra todo mundo!
+                    Quer trazer mais gente pra dançar um forró? Avise-nos com antecedência! Amigos são bem-vindos, mas as regras da contribuição valem pra todo mundo!
+                </p>
+            </div>
+        </section>
+
+        <!-- Wallpaper Section 2: Cangaceiros e Fogueira (Placeholder) -->
+        <section class="wallpaper-section rounded-2xl mb-8 cordel-border" style="background-image: url('https://placehold.co/1200x600/7c2d12/fdf8e6?text=Sua%20Xilogravura%20dos%20Cangaceiros%20e%20Fogueira%20Aqui');">
+            <div class="wallpaper-overlay rounded-2xl">
+                <p class="text-white text-2xl md:text-3xl font-bold drop-shadow-lg">
+                    A fogueira já está acesa para o arrasta-pé!
                 </p>
             </div>
         </section>
@@ -127,20 +161,20 @@
             <!-- Confirmed Guests -->
             <div class="mb-6">
                 <h3 class="text-2xl md:text-3xl font-semibold text-green-700 mb-3 flex items-center justify-center">
-                    ✅ Confirmados (Comida Típica Garantida!)
+                    Confirmados (Comida Típica Garantida!)
                 </h3>
                 <ul class="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-3">
                     <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center cordel-border">
-                        <span class="mr-2 text-green-600">✨</span> Família Silva (Bolo de Milho)
+                        Família Silva (Bolo de Milho)
                     </li>
                     <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center cordel-border">
-                        <span class="mr-2 text-green-600">✨</span> Tia Lúcia (Baião de Dois)
+                        Tia Lúcia (Baião de Dois)
                     </li>
                     <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center cordel-border">
-                        <span class="mr-2 text-green-600">✨</span> Primo João (Pamonha Fresquinha)
+                        Primo João (Pamonha Fresquinha)
                     </li>
                     <li class="bg-green-100 p-3 rounded-lg shadow-sm flex items-center cordel-border">
-                        <span class="mr-2 text-green-600">✨</span> Vovó Ana (Tapioca com Queijo Coalho)
+                        Vovó Ana (Tapioca com Queijo Coalho)
                     </li>
                     <!-- Adicione mais convidados confirmados aqui para demonstração -->
                 </ul>
@@ -149,17 +183,17 @@
             <!-- Awaiting Confirmation Guests -->
             <div>
                 <h3 class="text-2xl md:text-3xl font-semibold text-red-700 mb-3 flex items-center justify-center">
-                    ⏳ Aguardando Confirmação (Não Deixe o Boto Esperar!)
+                    Aguardando Confirmação (Não Deixe o Boto Esperar!)
                 </h3>
                 <ul class="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-3">
                     <li class="bg-red-100 p-3 rounded-lg shadow-sm flex items-center cordel-border">
-                        <span class="mr-2 text-red-600">❓</span> Família Oliveira
+                        Família Oliveira
                     </li>
                     <li class="bg-red-100 p-3 rounded-lg shadow-sm flex items-center cordel-border">
-                        <span class="mr-2 text-red-600">❓</span> Tio Carlos
+                        Tio Carlos
                     </li>
                     <li class="bg-red-100 p-3 rounded-lg shadow-sm flex items-center cordel-border">
-                        <span class="mr-2 text-red-600">❓</span> Amiga da Flávia, Patrícia
+                        Amiga da Flávia, Patrícia
                     </li>
                     <!-- Adicione mais convidados pendentes aqui para demonstração -->
                 </ul>
@@ -171,7 +205,7 @@
 
         <!-- Footer Section -->
         <footer class="text-center text-gray-600 text-sm mt-8">
-            <p>Prepare o chapéu de palha e venha prosear com a gente! ✨</p>
+            <p>Prepare o chapéu de palha e venha prosear com a gente!</p>
             <p>&copy; 2025 Família Ferreira. Todos os direitos reservados.</p>
         </footer>
 
